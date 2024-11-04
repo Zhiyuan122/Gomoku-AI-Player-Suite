@@ -74,7 +74,10 @@ Ensure Python 3.7 or above is installed, along with GoGui for graphical testing.
 ### GoGui Instructions
 
 GoGui is a graphical user interface (GUI) and toolset for board games. This project uses GoGui to display Gomoku AI match results and testing.
-![Diagram of Project](./Gogui.png)
+
+<p align="center">
+  <img src="Gogui.png" alt="Gomoku Sample Game State" width="300">
+</p>
 
 1. **Install GoGui**  
    Download and install GoGui, ensuring `gogui-regress` and `gogui-twogtp` commands are in the PATH.
@@ -98,6 +101,15 @@ GoGui is a graphical user interface (GUI) and toolset for board games. This proj
    gogui-twogtp -black "$GO1" -white "$GO2" -auto -komi 0 -size $BOARDSIZE -games $NUGAMES -sgffile $RESULTDIR/game
    ```
 
+<p align="center">
+  <img src="Gogui1.png" alt="Gomoku Sample Game State" width="300">
+</p>
+
+This image shows a sample Gomoku game state during project execution.
+Here, black stones represent the AI's moves, white stones are the standard bot's moves, and highlighted squares mark key positions where the AI aims to complete its sequences.
+
+> Note: While this example is not displayed on the standard 7x7 board used in this project, it still illustrates the AI’s decision-making process.
+
 ## Performance Statistics
 
 | Player         | Win Rate | Average Moves | Average Time per Move |
@@ -109,6 +121,31 @@ GoGui is a graphical user interface (GUI) and toolset for board games. This proj
 > **Note**: Since the win rate of the random player is approximately zero, it is excluded from further discussion and testing.
 
 ## Results
+
+### Flat MCS Player vs Standard Bot
+
+| Game | Player 1 (Flat MCS) | Player 2 (Standard Bot) | Winner   | Moves Taken |
+| ---- | ------------------- | ----------------------- | -------- | ----------- |
+| 1    | Win                 | Loss                    | Player 1 | 37          |
+| 2    | Win                 | Loss                    | Player 1 | 34          |
+| 3    | Loss                | Win                     | Player 2 | 33          |
+| 4    | Win                 | Loss                    | Player 1 | 29          |
+| 5    | Win                 | Loss                    | Player 1 | 30          |
+| 6    | Loss                | Win                     | Player 2 | 32          |
+| 7    | Win                 | Loss                    | Player 1 | 31          |
+| 8    | Loss                | Win                     | Player 2 | 35          |
+| 9    | Loss                | Win                     | Player 2 | 30          |
+| 10   | Win                 | Loss                    | Player 1 | 34          |
+| 11   | Win                 | Loss                    | Player 1 | 36          |
+| 12   | Loss                | Win                     | Player 2 | 31          |
+| 13   | Win                 | Loss                    | Player 1 | 33          |
+| 14   | Loss                | Win                     | Player 2 | 28          |
+| 15   | Win                 | Loss                    | Player 1 | 29          |
+| 16   | Win                 | Loss                    | Player 1 | 32          |
+| 17   | Win                 | Loss                    | Player 1 | 30          |
+| 18   | Loss                | Win                     | Player 2 | 35          |
+| 19   | Win                 | Loss                    | Player 1 | 33          |
+| 20   | Win                 | Loss                    | Player 1 | 34          |
 
 ### MCTS Player vs Standard Bot
 
@@ -134,34 +171,3 @@ GoGui is a graphical user interface (GUI) and toolset for board games. This proj
 | 18   | Win                    | Loss                    | Player 1 | 34          |
 | 19   | Win                    | Loss                    | Player 1 | 29          |
 | 20   | Win                    | Loss                    | Player 1 | 30          |
-
-### Flat MCTS Player vs Standard Bot
-
-| Game | Player 1 (Flat MCS) | Player 2 (Standard Bot) | Winner   | Moves Taken |
-| ---- | ------------------- | ----------------------- | -------- | ----------- |
-| 1    | Win                 | Loss                    | Player 1 | 37          |
-| 2    | Win                 | Loss                    | Player 1 | 34          |
-| 3    | Loss                | Win                     | Player 2 | 33          |
-| 4    | Win                 | Loss                    | Player 1 | 29          |
-| 5    | Win                 | Loss                    | Player 1 | 30          |
-| 6    | Loss                | Win                     | Player 2 | 32          |
-| 7    | Win                 | Loss                    | Player 1 | 31          |
-| 8    | Loss                | Win                     | Player 2 | 35          |
-| 9    | Loss                | Win                     | Player 2 | 30          |
-| 10   | Win                 | Loss                    | Player 1 | 34          |
-| 11   | Win                 | Loss                    | Player 1 | 36          |
-| 12   | Loss                | Win                     | Player 2 | 31          |
-| 13   | Win                 | Loss                    | Player 1 | 33          |
-| 14   | Loss                | Win                     | Player 2 | 28          |
-| 15   | Win                 | Loss                    | Player 1 | 29          |
-| 16   | Win                 | Loss                    | Player 1 | 32          |
-| 17   | Win                 | Loss                    | Player 1 | 30          |
-| 18   | Loss                | Win                     | Player 2 | 35          |
-| 19   | Win                 | Loss                    | Player 1 | 33          |
-| 20   | Win                 | Loss                    | Player 1 | 34          |
-
-## Team Members
-
-    Zhiyuan Yu (CCID: zyu6) (Official Sender)
-    Kimberly Tran (CCID: ktran5)
-    Juyi Han (CCID: juyi)
